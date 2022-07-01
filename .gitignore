@@ -1,0 +1,9 @@
+# git push --force origin main
+
+node_modules/
+.cache/
+dist/
+.env
+.DS_Store
+coverage/
+.vscode/
