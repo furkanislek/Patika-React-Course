@@ -25,6 +25,8 @@ function App() {
           <br/>
           <br/>
           <label htmlFor="email">Email</label>
+          <br/>
+          <br/>
           <Field
             id="email"
             name="email"
