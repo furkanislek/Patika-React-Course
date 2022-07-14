@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Field, Form } from "formik";
+import { Formik } from "formik";
 
 function App() {
   return (
@@ -15,29 +15,35 @@ function App() {
           console.log(values);
         }}
       >
-        <Form>
+        {({handleSubmit, handleChange}) => (
+          <form onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name</label>
-          <Field id="firstName" name="firstName" placeholder="Jane" />  
+          <input 
+          name="firstName"
+          onChange={handleChange}
+          />  
           <br/>
           <br/>
           <label htmlFor="lastName">Last Name</label>
-          <Field id="lastName" name="lastName" placeholder="Doe" />
+          <input 
+          name="lastName"
+          onChange={handleChange}
+          />  
           <br/>
           <br/>
           <label htmlFor="email">Email</label>
-          <br/>
-          <br/>
-          <br/>
-          <Field
-            id="email"
-            name="email"
-            placeholder="jane@acme.com"
-            type="email"
-          />
+          <input type="email"
+          name="email"
+          onChange={handleChange}
+          />  
+        
           <br/>
           <br/>
           <button type="submit">Submit</button>
-        </Form>
+        </form>
+        )
+          
+        }
       </Formik>
     </div>
   );
