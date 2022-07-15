@@ -1,24 +1,25 @@
 import React from "react";
-import { Formik } from "formik";
+import { useFormik } from "formik";
 
 function App() {
+    const {handleSubmit, handleChange, values} = useFormik({
+      initialValues: {
+        firstName: "Furkan Akif",
+        lastName: "İŞLEK",
+        email: "furkanakifislek@gmail.com",
+        gender: "female",
+        hobies: [],
+        country: "",
+      },
+      onSubmit: values => {
+        alert(JSON.stringify(values, null, 2));
+      },
+      
+     
+    });
   return (
     <div className="App">
       <h1>Sign Up</h1>
-      <Formik
-        initialValues={{
-          firstName: "Furkan Akif",
-          lastName: "İŞLEK",
-          email: "furkanakifislek@gmail.com",
-          gender: "female",
-          hobies: [],
-          country: "",
-        }}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-      >
-        {({ handleSubmit, handleChange, values }) => (
           <form onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name</label>
             <input
@@ -99,12 +100,16 @@ function App() {
             <br />
             <br />
 
-            <select name="country" value={values.country} onChange={handleChange}>
+            <select
+              name="country"
+              value={values.country}
+              onChange={handleChange}
+            >
+              <option value=""></option>
               <option value="Turkey">Turkey</option>
               <option value="Germany">Germany</option>
               <option value="USA">USA</option>
             </select>
-
 
             <br />
             <br />
@@ -116,8 +121,7 @@ function App() {
 
             <code>{JSON.stringify(values)};</code>
           </form>
-        )}
-      </Formik>
+        
     </div>
   );
 }
