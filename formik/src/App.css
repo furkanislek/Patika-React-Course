@@ -6,3 +6,9 @@
 label{
   display: block;
 }
+
+.errstyle {
+ color: red;
+ font-weight: bold;
+ font-style: italic;
+}
