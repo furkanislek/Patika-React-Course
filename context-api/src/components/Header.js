@@ -8,7 +8,7 @@ function Header() {
       Active Theme : {theme}
       <br />
       <br />
-      <button onClick={() => setTheme(theme === "dark" ? "pink" : "dark")}>
+      <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
         Change Theme
       </button>
     </div>

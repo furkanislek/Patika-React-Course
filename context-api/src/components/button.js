@@ -9,7 +9,7 @@ function Button() {
       Active Theme : {theme}
       <br />
       <br />
-      <button onClick={() => setTheme(theme === "pink" ? "dark" : "pink")}>
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
         Change Theme
       </button>
     </div>

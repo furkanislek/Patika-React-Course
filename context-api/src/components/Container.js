@@ -10,7 +10,7 @@ function Container() {
   console.log(theme);
   
   return (
-    <div className={`app ${theme === "dark" ? theme : "pink"}`}>
+    <div className={`app ${theme === "dark" ? theme : "light"}`}>
       <Header />
       <hr />
       <Button />
