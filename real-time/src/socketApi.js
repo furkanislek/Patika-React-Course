@@ -1,14 +1,14 @@
 import io from "socket.io-client";
 
-let socket = io("http://localhost:3001", {
-    transports: ["websocket"]
-});
+let socket;
 
 export const init = () => {
 
     console.log("Sunucuya Bağlanılıyor...");
 
-   
+    socket = io("http://localhost:3001", {
+        transports: ["websocket"]
+    });
 
     socket.on("connect", () => 
     console.log("Sunucuya Bağlantı Başarılı.")
@@ -16,3 +16,6 @@ export const init = () => {
 
 }
 
+export const send = (color) => {
+    socket.emit ("newColor", color)
+}
