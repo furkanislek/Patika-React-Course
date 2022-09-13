@@ -1,6 +1,6 @@
 
 import { IntlProvider, FormattedMessage, FormattedNumber } from "react-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 const messages = {
@@ -9,7 +9,7 @@ const messages = {
     description : "3 Yeni Mesajınız Var"
   },
 
-  "en-EN" : {
+  "en-US" : {
     title : "Hello World",
     description : "You Have 3 New Messages"
   }
@@ -17,20 +17,26 @@ const messages = {
 };
 
 function App() {
-  const [lang, setLang] = useState("tr-TR");
+  const defaultLocale = navigator.languages[4];
+  const [locale, setLocale] = useState(defaultLocale);
 
+  useEffect(() => {
+    localStorage.setItem("locale", locale)
+  }, [locale]);
+
+  console.log(navigator)
   return (
     <div className="App">
-      <IntlProvider messages={messages[lang]}>
+      <IntlProvider locale={locale} messages={messages[locale]}>
         <FormattedMessage id="title" />
         <p>
           <FormattedMessage id="description" />
         </p>
         <br />
         <br />
-        <button onClick={() => setLang("tr-TR")}>TR</button>
+        <button onClick={() => setLocale("tr-TR")}>TR</button>
         <br />
-        <button onClick={() => setLang("en-EN")}>EN</button>
+        <button onClick={() => setLocale("en-US")}>EN</button>
       </IntlProvider>
     </div>
   );
