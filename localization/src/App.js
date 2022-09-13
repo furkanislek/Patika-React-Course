@@ -17,7 +17,9 @@ const messages = {
 };
 
 function App() {
-  const defaultLocale = navigator.languages[4];
+
+  const isLocale = localStorage.getItem("locale");
+  const defaultLocale = isLocale ? isLocale : navigator.languages[4];
   const [locale, setLocale] = useState(defaultLocale);
 
   useEffect(() => {
