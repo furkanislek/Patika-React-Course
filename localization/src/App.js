@@ -5,11 +5,13 @@ import "./App.css";
 
 const messages = {
   "tr-TR" : {
-    title : "Merhaba Dünya"
+    title : "Merhaba Dünya",
+    description : "3 Yeni Mesajınız Var"
   },
 
   "en-EN" : {
-    title : "Hello World"
+    title : "Hello World",
+    description : "You Have 3 New Messages"
   }
 
 };
@@ -21,6 +23,9 @@ function App() {
     <div className="App">
       <IntlProvider messages={messages[lang]}>
         <FormattedMessage id="title" />
+        <p>
+          <FormattedMessage id="description" />
+        </p>
         <br />
         <br />
         <button onClick={() => setLang("tr-TR")}>TR</button>
