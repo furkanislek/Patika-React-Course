@@ -6,12 +6,12 @@ import "./App.css";
 const messages = {
   "tr-TR" : {
     title : "Merhaba Dünya",
-    description : "3 Yeni Mesajınız Var"
+    description : "{count} Yeni Mesajınız Var"
   },
 
   "en-US" : {
     title : "Hello World",
-    description : "You Have 3 New Messages"
+    description : "You Have {count} New Messages"
   }
 
 };
@@ -32,7 +32,7 @@ function App() {
       <IntlProvider locale={locale} messages={messages[locale]}>
         <FormattedMessage id="title" />
         <p>
-          <FormattedMessage id="description" />
+          <FormattedMessage id="description" values={{count : 5}} />
         </p>
         <br />
         <br />
