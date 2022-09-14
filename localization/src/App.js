@@ -1,5 +1,5 @@
 
-import { IntlProvider, FormattedMessage, FormattedNumber } from "react-intl";
+import { IntlProvider, FormattedMessage} from "react-intl";
 import { useState, useEffect } from "react";
 import "./App.css";
 
