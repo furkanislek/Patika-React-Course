@@ -1,4 +1,21 @@
+*{
+  background-color: antiquewhite;
+  color: darkred;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+button {
+  border-color: rgb(170, 200, 226);
+  border-width: 5px;
+  margin-top: 10px;
+}
+
 .App {
   text-align: center;
+
 }
 
